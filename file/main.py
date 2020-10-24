@@ -1,6 +1,37 @@
 # import Spritelist as spritelist
 from Spritelist import *
 from webbrowser import open_new
+import os
+import platform
+Computer_type=platform.system()
+CT=str(Computer_type)
+try:
+    from replit import db
+except:
+    try:
+        os.system("pip install replit")
+    except:
+        try:
+            try:
+                os.system("py -m pip install pip")
+                from replit import db
+            except:
+                os.system("py -m pip install --upgrade pip")
+                from replit import db
+        except:
+            print("If this is your first time using this program, please consider running it with admin rights.")
+            if CT=='Windows':
+                piplink="https://github.com/HenraL/Install_pygame/tree/master/files"
+            elif CT=='Linux':
+                piplink="https://www.youtube.com/results?search_query=how+to+install+pip+on+linux"
+            else:
+                piplink="https://youtu.be/j3yH6FfD_Wk"
+            tk_windows.QuestionYN("If this is already the case, please consider installing the 'pip' module to enable the program to download and import the 'requests' library.","Do you wish to open the link to the pip installing file? (link: {}) [(y)es/(n)o]".format(piplink),"Yes","No")
+            askpip=answer
+            if askpip=="y" or askpip=="Y":
+                open_new(piplink)
+            else:
+                print()
 alert=[
     [' ', ' ', ' ', ' ', ' ', ' ', ' ', '/', '\\', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '/', '\\', ' '], 
     [' ', ' ', ' ', ' ', ' ', ' ', '/', ' ', ' ', '\\', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '/', ' ', ' ', '\\', ' '], 
